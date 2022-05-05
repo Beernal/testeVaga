@@ -1,19 +1,13 @@
 public with sharing class QuerryModule {
 
 
-    public static LoginTable__C QuerryModule(LoginTable__C userTemp) {
+    public static LoginTable__c QuerryModule(LoginTable__c userTemp) {
          
-        //Busca ID do usuário informado
+
+        //Valida Login e senha e captura ID do usuário
+        return [SELECT Id FROM LoginTable__c WHERE Username__c =:userTemp.Username__c AND Password__c = :userTemp.Password__c];
+       
         
-        
-        return [SELECT Id FROM LoginTable__C WHERE Username__c = :userTemp.Username__c AND Password__c = :userTemp.Password__c ];
-
-
-        
-
-
-
-        return ;
     }
 
     

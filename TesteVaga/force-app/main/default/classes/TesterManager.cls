@@ -4,18 +4,17 @@ public with sharing class TesterManager  {
 
     @isTest
     static void TestQuerryModule() {
-        LoginTable__C test = new LoginTable__C(Username__c='angelobernal@salesforce.com');
+        LoginTable__c test = new LoginTable__c(Username__c='angelobernal@salesforce.com', Password__c='a1b2c3d4e5');
+        QuerryModule.QuerryModule(test);
+        }
         
-        
-        System.debug('Retorno TestQuerryModule' + QuerryModule.QuerryModule(test));
-
-    }
+    
     @isTest
     static void TestFormularioSignUp(){
         String nome = 'Angelo';
         String email = 'angelobernal@salesforce.com';
         String senha = 'a1b2c3d4e5';
-        String usuario= 'angelobernal';
+        String usuario= 'angelobernal@salesforce.com';
         Integer cpf = 01212312345;
      
 
